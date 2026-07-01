@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Times & Rankings | Tolga Kilic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">TOLGA KILIC <span>Class of 2028 &middot; NCAP</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="times.html" class="active">Times &amp; Rankings</a>
+      <a href="meets.html">Meets</a>
+      <a href="videos.html">Videos</a>
+      <a href="profile.html">Athlete Profile</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Updated <span id="hero-updated"></span> &middot; Source: SwimCloud &amp; SwimIntel</div>
+    <h1>Times &amp; Rankings</h1>
+    <p>Best times in short course yards (SCY) and long course meters (LCM), with national and state ranking context.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">SwimIntel</div>
+      <h2>National rankings snapshot</h2>
+    </div>
+    <div id="stat-grid" class="stat-grid"></div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Best times</div>
+      <h2>Full time list</h2>
+    </div>
+    <div class="two-col-tables">
+      <div>
+        <h3>Short course yards (SCY)</h3>
+        <table class="times-table" id="scy-table">
+          <thead><tr><th>Event</th><th>Time</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div>
+        <h3>Long course meters (LCM)</h3>
+        <table class="times-table" id="lcm-table">
+          <thead><tr><th>Event</th><th>Time</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Rankings in context</div>
+      <h2>SwimCloud &amp; SwimIntel</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3><a href="https://www.swimcloud.com/swimmer/1903826/times/" target="_blank" rel="noopener">SwimCloud</a></h3>
+        <table class="times-table" id="swimcloud-table">
+          <thead><tr><th>Category</th><th>Rank</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h3><a href="https://app.swimintel.ai/recruits/0198a10f-8155-7eda-b862-8cb40095d376" target="_blank" rel="noopener">SwimIntel</a></h3>
+        <table class="times-table" id="swimintel-table">
+          <thead><tr><th>Event</th><th>National rank</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <p style="margin-top:12px; font-size:13px; color:var(--gray);" id="qualifiers-note"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h4>Tolga Kilic</h4>
+      <p style="color:#cfd6e6;">Riverside High School, Leesburg, VA<br>Nations Capital Swim Club (NCAP)<br>Potomac Valley Swimming</p>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <a href="index.html">Home</a><br>
+      <a href="times.html">Times &amp; Rankings</a><br>
+      <a href="meets.html">Meets</a><br>
+      <a href="videos.html">Videos</a><br>
+      <a href="profile.html">Athlete Profile</a>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <a href="https://www.swimcloud.com/swimmer/1903826" target="_blank" rel="noopener">SwimCloud</a><br>
+      <a href="https://app.swimintel.ai/recruits/0198a10f-8155-7eda-b862-8cb40095d376" target="_blank" rel="noopener">SwimIntel</a>
+    </div>
+  </div>
+  <div class="footer-bottom wrap">Tolga Kilic &middot; Class of 2028 &middot; Updated <span id="footer-updated"></span></div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/main.js"></script>
+<script>
+(function () {
+  var d = window.SITE_DATA;
+  document.getElementById('hero-updated').textContent = d.meta.lastUpdated;
+  document.getElementById('footer-updated').textContent = d.meta.lastUpdated;
+
+  var si = d.rankings.swimIntel;
+  var sc = d.rankings.swimCloud;
+
+  var statGrid = document.getElementById('stat-grid');
+  var cards = [
+    { label: 'SwimIntel Overall', value: si.overallClassRank, note: si.classLabel, cls: '' },
+    { label: 'Impact Rating', value: si.impactRating, note: si.stars + ' stars, out of 100', cls: 'gold' }
+  ].concat(si.bestEvents.map(function (e) {
+    return { label: e.event, value: e.rank, note: 'nationally (' + e.time + ')', cls: 'green' };
+  }));
+  cards.forEach(function (c) {
+    statGrid.appendChild(el('div', 'stat-card ' + c.cls,
+      '<div class="label">' + c.label + '</div><div class="value">' + c.value + '</div><div class="note">' + c.note + '</div>'));
+  });
+
+  function fillTable(id, rows) {
+    var tbody = document.querySelector('#' + id + ' tbody');
+    rows.forEach(function (r) {
+      tbody.appendChild(el('tr', '', '<td>' + r.event + '</td><td class="time">' + r.time + '</td>'));
+    });
+  }
+  fillTable('scy-table', d.times.scy);
+  fillTable('lcm-table', d.times.lcm);
+
+  var scBody = document.querySelector('#swimcloud-table tbody');
+  [
+    { label: 'Power Index', value: sc.powerIndex },
+    { label: 'Class of 2028 national rank', value: sc.classOf2028NationalRank },
+    { label: 'Virginia rank', value: sc.virginiaRank }
+  ].concat(sc.seasonRankings.map(function (r) { return { label: r.label, value: r.rank }; }))
+   .forEach(function (r) {
+     scBody.appendChild(el('tr', '', '<td>' + r.label + '</td><td class="time">' + r.value + '</td>'));
+   });
+
+  var siBody = document.querySelector('#swimintel-table tbody');
+  si.bestEvents.forEach(function (e) {
+    siBody.appendChild(el('tr', '', '<td>' + e.event + '</td><td class="time">' + e.rank + ' (' + e.time + ')</td>'));
+  });
+  document.getElementById('qualifiers-note').innerHTML =
+    '<strong>' + si.sectionalsCuts + ' Sectionals qualifying times</strong>, <strong>' + si.futuresCuts + ' Futures qualifying times</strong> across events.';
+})();
+</script>
+</body>
+</html>

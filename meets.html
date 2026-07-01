@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meets | Tolga Kilic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">TOLGA KILIC <span>Class of 2028 &middot; NCAP</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="times.html">Times &amp; Rankings</a>
+      <a href="meets.html" class="active">Meets</a>
+      <a href="videos.html">Videos</a>
+      <a href="profile.html">Athlete Profile</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Updated <span id="hero-updated"></span></div>
+    <h1>Meets</h1>
+    <p>Upcoming competitions and recent results. Coaches: reach out any time &mdash; contact details are on the <a href="index.html" style="color:#fff; text-decoration:underline;">homepage</a>.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What's next</div>
+      <h2>Upcoming meets</h2>
+    </div>
+    <div id="upcoming-list"></div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Results</div>
+      <h2>Recent meets</h2>
+    </div>
+    <div class="card" id="recent-list"></div>
+    <p style="margin-top:16px;"><a href="https://www.swimcloud.com/swimmer/1903826/meets/" target="_blank" rel="noopener">Full meet history on SwimCloud &rarr;</a></p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h4>Tolga Kilic</h4>
+      <p style="color:#cfd6e6;">Riverside High School, Leesburg, VA<br>Nations Capital Swim Club (NCAP)<br>Potomac Valley Swimming</p>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <a href="index.html">Home</a><br>
+      <a href="times.html">Times &amp; Rankings</a><br>
+      <a href="meets.html">Meets</a><br>
+      <a href="videos.html">Videos</a><br>
+      <a href="profile.html">Athlete Profile</a>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <a href="https://www.swimcloud.com/swimmer/1903826" target="_blank" rel="noopener">SwimCloud</a><br>
+      <a href="https://app.swimintel.ai/recruits/0198a10f-8155-7eda-b862-8cb40095d376" target="_blank" rel="noopener">SwimIntel</a>
+    </div>
+  </div>
+  <div class="footer-bottom wrap">Tolga Kilic &middot; Class of 2028 &middot; Updated <span id="footer-updated"></span></div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/main.js"></script>
+<script>
+(function () {
+  var d = window.SITE_DATA;
+  document.getElementById('hero-updated').textContent = d.meta.lastUpdated;
+  document.getElementById('footer-updated').textContent = d.meta.lastUpdated;
+
+  var upcomingWrap = document.getElementById('upcoming-list');
+  if (!d.meets.upcoming.length) {
+    upcomingWrap.appendChild(el('div', 'empty-note', 'No upcoming meets listed yet. This section is updated by hand as meets get scheduled &mdash; check back soon, or ask Tolga\'s club (NCAP) for the current meet calendar.'));
+  } else {
+    var grid = el('div', 'upcoming-grid');
+    d.meets.upcoming.forEach(function (m) {
+      var eventsHtml;
+      if (m.events && m.events.length) {
+        eventsHtml = '<table>' + m.events.map(function (ev) {
+          return '<tr><td class="ev-num">#' + ev.number + '</td><td>' + ev.desc + '</td><td class="ev-seed">' + ev.seed + '</td>' +
+                 '<td><span class="tag-approved">' + ev.status + '</span></td></tr>';
+        }).join('') + '</table>';
+      } else {
+        eventsHtml = '<p style="margin:0; font-size:13px; color:var(--gray);">Events will be added later.</p>';
+      }
+      var miniCard = el('div', 'meet-mini-card',
+        '<div class="meet-mini-head"><h3>' + m.name + '</h3><div class="meet-mini-meta">' + m.location + ' &middot; ' + m.dates + '</div></div>' +
+        eventsHtml);
+      grid.appendChild(miniCard);
+    });
+    upcomingWrap.appendChild(grid);
+  }
+
+  var recentWrap = document.getElementById('recent-list');
+  d.meets.recent.forEach(function (m) {
+    recentWrap.appendChild(el('div', 'meet-row',
+      '<div class="meet-date">' + formatDate(m.date) + '</div><div class="meet-name">' + m.name + '</div><div class="meet-highlight">' + m.highlight + '</div>'));
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Videos | Tolga Kilic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">TOLGA KILIC <span>Class of 2028 &middot; NCAP</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="times.html">Times &amp; Rankings</a>
+      <a href="meets.html">Meets</a>
+      <a href="videos.html" class="active">Videos</a>
+      <a href="profile.html">Athlete Profile</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Race film &amp; highlights</div>
+    <h1>Videos</h1>
+    <p>Highlight reel plus additional race footage. New videos get added here as they're filmed.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Featured</div>
+      <h2 id="video-title">Highlight Reel</h2>
+    </div>
+    <div class="video-frame">
+      <iframe id="highlight-frame" src="" allow="autoplay" allowfullscreen title="Tolga Kilic highlight video"></iframe>
+    </div>
+    <p style="margin-top:14px;"><a id="drive-link" href="#" target="_blank" rel="noopener">Open in Google Drive &rarr;</a></p>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">More footage</div>
+      <h2>Additional videos</h2>
+      <p>Race clips from meets, organized by event. Click any title to open the clip in Google Drive.</p>
+    </div>
+    <div id="video-grid" class="video-link-grid"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h4>Tolga Kilic</h4>
+      <p style="color:#cfd6e6;">Riverside High School, Leesburg, VA<br>Nations Capital Swim Club (NCAP)<br>Potomac Valley Swimming</p>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <a href="index.html">Home</a><br>
+      <a href="times.html">Times &amp; Rankings</a><br>
+      <a href="meets.html">Meets</a><br>
+      <a href="videos.html">Videos</a><br>
+      <a href="profile.html">Athlete Profile</a>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <a href="https://www.swimcloud.com/swimmer/1903826" target="_blank" rel="noopener">SwimCloud</a><br>
+      <a href="https://app.swimintel.ai/recruits/0198a10f-8155-7eda-b862-8cb40095d376" target="_blank" rel="noopener">SwimIntel</a>
+    </div>
+  </div>
+  <div class="footer-bottom wrap">Tolga Kilic &middot; Class of 2028 &middot; Updated <span id="footer-updated"></span></div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/main.js"></script>
+<script>
+(function () {
+  var d = window.SITE_DATA;
+  document.getElementById('footer-updated').textContent = d.meta.lastUpdated;
+
+  var v = d.videos.highlight;
+  document.getElementById('video-title').textContent = v.title;
+  document.getElementById('highlight-frame').src = driveEmbedUrl(v.driveFileId);
+  document.getElementById('drive-link').href = v.driveUrl;
+
+  var grid = document.getElementById('video-grid');
+  if (!d.videos.additional.length) {
+    grid.appendChild(el('div', 'empty-note', 'More race videos coming soon. New footage gets added here after each meet &mdash; check assets/data.js to add a video link.'));
+  } else {
+    d.videos.additional.forEach(function (item) {
+      var href = item.driveFileId
+        ? 'https://drive.google.com/file/d/' + item.driveFileId + '/view'
+        : (item.youtubeId ? 'https://www.youtube.com/watch?v=' + item.youtubeId : '#');
+      var a = document.createElement('a');
+      a.className = 'video-link-tile';
+      a.href = href;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.innerHTML = '<span class="play-dot">&#9654;</span><span>' + item.title + '</span>';
+      grid.appendChild(a);
+    });
+  }
+})();
+</script>
+</body>
+</html>
