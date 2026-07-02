@@ -88,11 +88,11 @@ window.SITE_DATA = {
     "scy": [
       { "event": "50 Backstroke", "time": "24.85" },
       { "event": "100 Backstroke", "time": "51.37" },
-      { "event": "200 Backstroke", "time": "1:50.89" },
-      { "event": "200 IM", "time": "1:53.49" },
-      { "event": "400 IM", "time": "4:06.03" },
+      { "event": "200 Backstroke", "time": "1:50.89" "Futures-18U" },
+      { "event": "200 IM", "time": "1:53.49" "Futures-18U" },
+      { "event": "400 IM", "time": "4:06.03" "Futures-18U" },
       { "event": "100 Breaststroke", "time": "59.53" },
-      { "event": "200 Breaststroke", "time": "2:04.76" },
+      { "event": "200 Breaststroke", "time": "2:04.76" "Futures-18U" },
       { "event": "100 Freestyle", "time": "48.92" },
       { "event": "200 Freestyle", "time": "1:46.41" }
     ],
