@@ -87,7 +87,7 @@ window.SITE_DATA = {
   "times": {
     "scy": [
       { "event": "50 Backstroke", "time": "24.85" },
-      { "event": "100 Backstroke", "time": "51.37" },
+      { "event": "100 Backstroke", "time": "51.37" "Futures-18U" },
       { "event": "200 Backstroke", "time": "1:50.89" "Futures-18U" },
       { "event": "200 IM", "time": "1:53.49" "Futures-18U" },
       { "event": "400 IM", "time": "4:06.03" "Futures-18U" },
