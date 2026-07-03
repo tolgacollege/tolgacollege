@@ -74,8 +74,8 @@ window.SITE_DATA = {
     "swimCloud": {
       "asOf": "June 2026",
       "powerIndex": "31.28",
-      "classOf2028 NationalRank (PowerIndex)": "525th",
-      "virginiaRank (PowerIndex)": "34th",
+      "classOf2028NationalRank": "525th",
+"virginiaRank": "34th",
       "seasonRankings": [
         { "label": "VHSL (state)", "rank": "96th" },
         { "label": "Potomac Valley Swimming, 15-18", "rank": "75th" },
