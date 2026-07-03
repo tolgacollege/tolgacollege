@@ -53,14 +53,14 @@
       <div>
         <h3>Short course yards (SCY)</h3>
         <table class="times-table" id="scy-table">
-          <thead><tr><th>Event</th><th>Time</th></tr></thead>
+          <thead><tr><th>Event</th><th>Time</th><th>Standard</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
       <div>
         <h3>Long course meters (LCM)</h3>
         <table class="times-table" id="lcm-table">
-          <thead><tr><th>Event</th><th>Time</th></tr></thead>
+          <thead><tr><th>Event</th><th>Time</th><th>Standard</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
@@ -140,11 +140,12 @@
       '<div class="label">' + c.label + '</div><div class="value">' + c.value + '</div><div class="note">' + c.note + '</div>'));
   });
 
-  function fillTable(id, rows) {
-    var tbody = document.querySelector('#' + id + ' tbody');
-    rows.forEach(function (r) {
-      tbody.appendChild(el('tr', '', '<td>' + r.event + '</td><td class="time">' + r.time + '</td>'));
-    });
+ function fillTable(id, rows) {
+  var tbody = document.querySelector('#' + id + ' tbody');
+  rows.forEach(function (r) {
+    var standardHtml = r.standard ? '<span class="tag">' + r.standard + '</span>' : '';
+    tbody.appendChild(el('tr', '', '<td>' + r.event + '</td><td class="time">' + r.time + '</td><td>' + standardHtml + '</td>'));
+  });
   }
   fillTable('scy-table', d.times.scy);
   fillTable('lcm-table', d.times.lcm);
