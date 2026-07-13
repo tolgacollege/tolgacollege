@@ -98,11 +98,11 @@ window.SITE_DATA = {
 ],
     "lcm": [
       { "event": "50 Backstroke", "time": "28.79" },
-      { "event": "100 Backstroke", "time": "1:01.47" },
+      { "event": "100 Backstroke", "time": "1:00.75" },
       { "event": "200 Backstroke", "time": "2:12.31" },
-      { "event": "200 IM", "time": "2:13.39" },
-      { "event": "400 IM", "time": "4:54.35" },
-      { "event": "100 Breaststroke", "time": "1:10.40" },
+      { "event": "200 IM", "time": "2:11.52" },
+      { "event": "400 IM", "time": "4:51.17" },
+      { "event": "100 Breaststroke", "time": "1:08.51" },
       { "event": "200 Breaststroke", "time": "2:31.35" },
       { "event": "100 Freestyle", "time": "57.06" },
       { "event": "200 Freestyle", "time": "2:02.29" }
@@ -132,6 +132,7 @@ window.SITE_DATA = {
       }
     ],
     "recent": [
+      { "date": "2026-07-09", "name": "PV Long Course Open Championship", "highlight": "200 IM 2:11.52 (LCM PB), 400 IM 4:51.17 (LCM PB), 100 Breast 1:08.51 (LCM PB)" }
       { "date": "2026-06-11", "name": "PV NCAP Elite Qualifier", "highlight": "200 IM 2:13.39 (LCM PB), 100 Breaststroke 1:10.40 (LCM PB)" },
       { "date": "2026-05-29", "name": "Maryland State LC Championship", "highlight": "100 Free 57.06 and 200 Free 2:02.29 (LCM PBs)" },
       { "date": "2026-05-14", "name": "Speedo Sectionals — Richmond", "highlight": "100 Back 1:01.47 and 200 Back 2:12.31 (LCM PBs)" },
