@@ -111,23 +111,23 @@ window.SITE_DATA = {
   "meets": {
     "upcoming": [
       {
-        "name": "PVS LC Open Championships",
-        "location": "University of Maryland",
-        "dates": "July 9-12, 2026",
-        "events": [
-          { "number": "4 (d1/s1)", "desc": "M Open 200 Medley", "seed": "2:13.39L", "status": "Approved" },
-          { "number": "8 (d1/s1)", "desc": "M Open 100 Breast", "seed": "1:10.40L", "status": "Approved" },
-          { "number": "14 (d2/s5)", "desc": "M Open 50 Back", "seed": "28.79L", "status": "Approved" },
-          { "number": "20 (d2/s5)", "desc": "M Open 400 Medley", "seed": "4:54.35L", "status": "Approved" },
-          { "number": "28 (d3/s9)", "desc": "M Open 100 Back", "seed": "1:01.47L", "status": "Approved" },
-          { "number": "36 (d4/s13)", "desc": "M Open 200 Back", "seed": "2:12.31L", "status": "Approved" },
-          { "number": "40 (d4/s13)", "desc": "M Open 200 Breast", "seed": "2:31.35L", "status": "Approved" }
-        ]
-      },
-      {
         "name": "2026 NCSA Summer Swimming Championships",
         "location": "IU Natatorium, Indianapolis, IN",
         "dates": "July 22-26, 2026",
+        "events": [
+          { "number": "6", "desc": "M Open 200 Back", "seed": "2:12.31L", "status": "Approved" },
+          { "number": "12", "desc": "M Open 400 Medley", "seed": "4:51.317L", "status": "Approved" },
+          { "number": "14", "desc": "M Open 50 Back", "seed": "28.79L", "status": "Approved" },
+          { "number": "16", "desc": "M Open 100 Back", "seed": "1:00.75L", "status": "Approved" },
+          { "number": "32", "desc": "M Open 200 Breast", "seed": "2:31.35L", "status": "Approved" },
+          { "number": "36", "desc": "M Open 100 Breast", "seed": "1:08.51L", "status": "Approved" },
+          { "number": "40", "desc": "M Open 200 Medley", "seed": "2:11.52L", "status": "Approved" },
+        ]
+      },
+      {
+        "name": "TBD",
+        "location": "TBD",
+        "dates": "TBD",
         "events": []
       }
     ],
