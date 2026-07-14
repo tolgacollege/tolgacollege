@@ -1,3 +1,4 @@
+Times · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
+ 
 <header class="site-header">
   <div class="nav-inner">
     <a class="brand" href="index.html">TOLGA KILIC <span>Class of 2028 &middot; NCAP</span></a>
@@ -23,7 +24,7 @@
     </nav>
   </div>
 </header>
-
+ 
 <div class="page-hero">
   <div class="wrap">
     <div class="eyebrow">Updated <span id="hero-updated"></span> &middot; Source: SwimCloud &amp; SwimIntel</div>
@@ -31,7 +32,7 @@
     <p>Best times in short course yards (SCY) and long course meters (LCM), with national and state ranking context.</p>
   </div>
 </div>
-
+ 
 <section>
   <div class="wrap">
     <div class="section-head">
@@ -41,7 +42,7 @@
     <div id="stat-grid" class="stat-grid"></div>
   </div>
 </section>
-
+ 
 <section class="soft">
   <div class="wrap">
     <div class="section-head">
@@ -67,7 +68,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section>
   <div class="wrap">
     <div class="section-head">
@@ -93,7 +94,7 @@
     </div>
   </div>
 </section>
-
+ 
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
@@ -116,7 +117,7 @@
   </div>
   <div class="footer-bottom wrap">Tolga Kilic &middot; Class of 2028 &middot; Updated <span id="footer-updated"></span></div>
 </footer>
-
+ 
 <script src="assets/data.js"></script>
 <script src="assets/main.js"></script>
 <script>
@@ -124,10 +125,10 @@
   var d = window.SITE_DATA;
   document.getElementById('hero-updated').textContent = d.meta.lastUpdated;
   document.getElementById('footer-updated').textContent = d.meta.lastUpdated;
-
+ 
   var si = d.rankings.swimIntel;
   var sc = d.rankings.swimCloud;
-
+ 
   var statGrid = document.getElementById('stat-grid');
   var cards = [
     { label: 'SwimIntel Overall', value: si.overallClassRank, note: si.classLabel, cls: '' },
@@ -139,7 +140,7 @@
     statGrid.appendChild(el('div', 'stat-card ' + c.cls,
       '<div class="label">' + c.label + '</div><div class="value">' + c.value + '</div><div class="note">' + c.note + '</div>'));
   });
-
+ 
  function fillTable(id, rows) {
   var tbody = document.querySelector('#' + id + ' tbody');
   rows.forEach(function (r) {
@@ -149,7 +150,7 @@
   }
   fillTable('scy-table', d.times.scy);
   fillTable('lcm-table', d.times.lcm);
-
+ 
   var scBody = document.querySelector('#swimcloud-table tbody');
   [
     { label: 'Power Index', value: sc.powerIndex },
@@ -159,7 +160,7 @@
    .forEach(function (r) {
      scBody.appendChild(el('tr', '', '<td>' + r.label + '</td><td class="time">' + r.value + '</td>'));
    });
-
+ 
   var siBody = document.querySelector('#swimintel-table tbody');
   si.bestEvents.forEach(function (e) {
     siBody.appendChild(el('tr', '', '<td>' + e.event + '</td><td class="time">' + e.rank + ' (' + e.time + ')</td>'));
@@ -167,7 +168,7 @@
   document.getElementById('qualifiers-note').innerHTML =
     '<strong>' + si.sectionalsCuts + ' Sectionals qualifying times</strong>, <strong>' + si.futuresCuts + ' Futures qualifying times</strong> across events.';
 })();
-<script>
+</script>
 <script>
 (function () {
   var img = new Image();
