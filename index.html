@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
+ 
 <header class="site-header">
   <div class="nav-inner">
     <a class="brand" href="index.html">TOLGA KILIC <span>Class of 2028 &middot; NCAP</span></a>
@@ -24,7 +24,7 @@
     </nav>
   </div>
 </header>
-
+ 
 <section class="hero">
   <div class="slide" style="background-image:url('assets/img/slide-action-1.jpg')"></div>
   <div class="slide" style="background-image:url('assets/img/slide-breaststroke.jpg')"></div>
@@ -47,7 +47,7 @@
   </div>
   <div class="dots"></div>
 </section>
-
+ 
 <section>
   <div class="wrap">
     <div class="section-head">
@@ -58,7 +58,7 @@
     <div id="stat-grid" class="stat-grid"></div>
   </div>
 </section>
-
+ 
 <section id="highlight-video" class="soft">
   <div class="wrap">
     <div class="section-head">
@@ -76,7 +76,7 @@
     </p>
   </div>
 </section>
-
+ 
 <section>
   <div class="wrap">
     <div class="section-head">
@@ -102,7 +102,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section class="soft">
   <div class="wrap grid-2">
     <div class="card">
@@ -123,7 +123,7 @@
     </div>
   </div>
 </section>
-
+ 
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
@@ -146,18 +146,18 @@
   </div>
   <div class="footer-bottom wrap">Tolga Kilic &middot; Class of 2028 &middot; Updated <span id="footer-updated"></span></div>
 </footer>
-
+ 
 <script src="assets/data.js"></script>
 <script src="assets/main.js"></script>
 <script>
 (function () {
   var d = window.SITE_DATA;
-
+ 
   document.getElementById('footer-updated').textContent = d.meta.lastUpdated;
   document.getElementById('ncaa-id').textContent = d.athlete.ncaaId;
   document.getElementById('tagline-academics').textContent =
     d.athlete.gpa + ' GPA, ' + d.athlete.academicInterest + ' (secondary: ' + d.athlete.secondaryInterest + ')';
-
+ 
   var footerLinks = document.getElementById('footer-links');
   (d.athlete.social || []).forEach(function (s) {
     footerLinks.appendChild(document.createElement('br'));
@@ -166,7 +166,7 @@
     a.textContent = s.label;
     footerLinks.appendChild(a);
   });
-
+ 
   // stat cards
   var si = d.rankings.swimIntel;
   var statGrid = document.getElementById('stat-grid');
@@ -181,13 +181,13 @@
       '<div class="label">' + c.label + '</div><div class="value">' + c.value + '</div><div class="note">' + c.note + '</div>');
     statGrid.appendChild(card);
   });
-
+ 
   // video
   var v = d.videos.highlight;
   document.getElementById('video-title').textContent = v.title;
   document.getElementById('highlight-frame').src = driveEmbedUrl(v.driveFileId);
   document.getElementById('drive-link').href = v.driveUrl;
-
+ 
   // Signature events = whatever is listed in athlete.primaryEvents, matched
   // against the times table on the Times & Rankings page. Edit times.scy /
   // times.lcm in data.js and this table updates automatically — no
@@ -206,7 +206,7 @@
   fillSignatureTable('home-scy-table', d.times.scy);
   fillSignatureTable('home-lcm-table', d.times.lcm);
 })();
-<script>
+</script>
 <script>
 (function () {
   var img = new Image();
@@ -215,3 +215,4 @@
 </script>
 </body>
 </html>
+ 
