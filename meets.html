@@ -113,6 +113,11 @@
       '<div class="meet-date">' + formatDate(m.date) + '</div><div class="meet-name">' + m.name + '</div><div class="meet-highlight">' + m.highlight + '</div>'));
   });
 })();
+<script>
+(function () {
+  var img = new Image();
+  img.src = '/analytics-beacon?path=' + encodeURIComponent(location.pathname) + '&ref=' + encodeURIComponent(document.referrer);
+})();
 </script>
 </body>
 </html>
