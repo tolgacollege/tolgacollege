@@ -138,5 +138,11 @@
 <script src="assets/data.js"></script>
 <script src="assets/main.js"></script>
 <script>document.getElementById('footer-updated').textContent = window.SITE_DATA.meta.lastUpdated;</script>
+<script>
+(function () {
+  var img = new Image();
+  img.src = '/analytics-beacon?path=' + encodeURIComponent(location.pathname) + '&ref=' + encodeURIComponent(document.referrer);
+})();
+</script>
 </body>
 </html>
