@@ -167,6 +167,11 @@
   document.getElementById('qualifiers-note').innerHTML =
     '<strong>' + si.sectionalsCuts + ' Sectionals qualifying times</strong>, <strong>' + si.futuresCuts + ' Futures qualifying times</strong> across events.';
 })();
+<script>
+(function () {
+  var img = new Image();
+  img.src = '/analytics-beacon?path=' + encodeURIComponent(location.pathname) + '&ref=' + encodeURIComponent(document.referrer);
+})();
 </script>
 </body>
 </html>
