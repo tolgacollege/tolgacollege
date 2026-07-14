@@ -206,6 +206,11 @@
   fillSignatureTable('home-scy-table', d.times.scy);
   fillSignatureTable('home-lcm-table', d.times.lcm);
 })();
+<script>
+(function () {
+  var img = new Image();
+  img.src = '/analytics-beacon?path=' + encodeURIComponent(location.pathname) + '&ref=' + encodeURIComponent(document.referrer);
+})();
 </script>
 </body>
 </html>
