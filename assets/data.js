@@ -175,7 +175,14 @@ window.SITE_DATA = {
       { "title": "200 Free, 36th, PV Open LC Championship, LCM College Park 2025 Finals, Heat winner, Lane 2", "driveFileId": "1p0aNj4LvuQLZPbW7oYz7cHqwHIGVwI35" },
       { "title": "200 IM, 17th, PV Open LC Championship, LCM College Park 2025 Finals, Heat winner, Lane 4", "driveFileId": "1RAPNzx4MwjSr9iic5otv8wvBwxTJZYbM" },
       { "title": "200 IM, 33rd, Speedo sectionals LCM, Richmond 2026, Prelims, Lane 2", "driveFileId": "1PrIHq3xNxwQxd6ShBC9r_VKUr2mAkKVH" },
-      { "title": "400 IM, 42nd, Speedo sectionals LCM, Richmond 2026, Prelims, Lane 4", "driveFileId": "1tz2iFVsWnU2QrwJlkCCSqupd734aL8ty" }
+      { "title": "400 IM, 42nd, Speedo sectionals LCM, Richmond 2026, Prelims, Lane 4", "driveFileId": "1tz2iFVsWnU2QrwJlkCCSqupd734aL8ty" },
+      { "title": "200 Back, 16th, PV Open LC Championship, U of Maryland 2026, Prelims, Lane 7", "driveFileId": "1afpxlBYChbtR3UEfCd5CjZ0ojZkgyerj" },
+  { "title": "200 Breast, 20th, PV Open LC Championship, U of Maryland 2026, Prelims, Lane 8", "driveFileId": "1adk8iy987_EQ62_AMkV8cNItKo4ASRcL" },
+  { "title": "400 IM, 8th, PV Open LC Championship, U of Maryland 2026, Finals, Lane 8", "driveFileId": "1G9f4d-nlojur95XIk1Nlfq4rAKbMVkQ-" },
+  { "title": "100 Breast, 22nd, PV Open LC Championship, U of Maryland 2026, Prelims, Lane 3", "driveFileId": "1I566Z72oUB5Qcc3xEwsQVkFnk9l6i4f9" },
+  { "title": "100 Breast, 18th, PV Open LC Championship, U of Maryland 2026, Finals, Lane 5", "driveFileId": "19OuGKrUebUqbb0TIV-4nbJhLgFsjFWnl" },
+  { "title": "200 IM, 7th, PV Open LC Championship, U of Maryland 2026, Prelims, Lane 1", "driveFileId": "1WNOySe17jPvtqlgh29KdTlCtNohOMNE2" },
+  { "title": "200 IM, 7th, PV Open LC Championship, U of Maryland 2026, Finals, Lane 7", "driveFileId": "12d-8PIgZS0nA1yU_yCaw5gMmvXVxZyPw" }
     ]
   }
 };
