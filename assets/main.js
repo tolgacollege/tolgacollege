@@ -10,6 +10,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // password-gated visitor log link (footer)
+  var visitorLogLink = document.getElementById('visitor-log-link');
+  if (visitorLogLink) {
+    visitorLogLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      var pw = window.prompt('Enter password:');
+      if (pw) {
+        window.location.href = '/visitor-log?key=' + encodeURIComponent(pw);
+      }
+    });
+  }
+
   initSlideshow();
 });
 
