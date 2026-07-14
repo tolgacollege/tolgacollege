@@ -210,7 +210,7 @@
 <script>
 (function () {
   var img = new Image();
-  img.src = '/analytics-beacon?path=' + encodeURIComponent(location.pathname) + '&ref=' + encodeURIComponent(document.referrer);
+  img.src = '/analytics-beacon?path=' + encodeURIComponent(location.pathname + location.search) + '&ref=' + encodeURIComponent(document.referrer);
 })();
 </script>
 </body>
