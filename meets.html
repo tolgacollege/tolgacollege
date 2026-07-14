@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
+ 
 <header class="site-header">
   <div class="nav-inner">
     <a class="brand" href="index.html">TOLGA KILIC <span>Class of 2028 &middot; NCAP</span></a>
@@ -23,7 +23,7 @@
     </nav>
   </div>
 </header>
-
+ 
 <div class="page-hero">
   <div class="wrap">
     <div class="eyebrow">Updated <span id="hero-updated"></span></div>
@@ -31,7 +31,7 @@
     <p>Upcoming competitions and recent results. Coaches: reach out any time &mdash; contact details are on the <a href="index.html" style="color:#fff; text-decoration:underline;">homepage</a>.</p>
   </div>
 </div>
-
+ 
 <section>
   <div class="wrap">
     <div class="section-head">
@@ -41,7 +41,7 @@
     <div id="upcoming-list"></div>
   </div>
 </section>
-
+ 
 <section class="soft">
   <div class="wrap">
     <div class="section-head">
@@ -52,7 +52,7 @@
     <p style="margin-top:16px;"><a href="https://www.swimcloud.com/swimmer/1903826/meets/" target="_blank" rel="noopener">Full meet history on SwimCloud &rarr;</a></p>
   </div>
 </section>
-
+ 
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
@@ -75,7 +75,7 @@
   </div>
   <div class="footer-bottom wrap">Tolga Kilic &middot; Class of 2028 &middot; Updated <span id="footer-updated"></span></div>
 </footer>
-
+ 
 <script src="assets/data.js"></script>
 <script src="assets/main.js"></script>
 <script>
@@ -83,7 +83,7 @@
   var d = window.SITE_DATA;
   document.getElementById('hero-updated').textContent = d.meta.lastUpdated;
   document.getElementById('footer-updated').textContent = d.meta.lastUpdated;
-
+ 
   var upcomingWrap = document.getElementById('upcoming-list');
   if (!d.meets.upcoming.length) {
     upcomingWrap.appendChild(el('div', 'empty-note', 'No upcoming meets listed yet. This section is updated by hand as meets get scheduled &mdash; check back soon, or ask Tolga\'s club (NCAP) for the current meet calendar.'));
@@ -106,14 +106,14 @@
     });
     upcomingWrap.appendChild(grid);
   }
-
+ 
   var recentWrap = document.getElementById('recent-list');
   d.meets.recent.forEach(function (m) {
     recentWrap.appendChild(el('div', 'meet-row',
       '<div class="meet-date">' + formatDate(m.date) + '</div><div class="meet-name">' + m.name + '</div><div class="meet-highlight">' + m.highlight + '</div>'));
   });
 })();
-<script>
+</script>
 <script>
 (function () {
   var img = new Image();
